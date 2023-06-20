@@ -7,7 +7,7 @@ import EventForm from './EventForm';
 import { success } from '../helpers/notifications';
 import { handleAjaxError } from '../helpers/helpers';
 
-const Editor = () => {
+const Editor = ({currUser, setCurrUser}) => {
   const [events, setEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
@@ -106,7 +106,7 @@ const Editor = () => {
 
   return(
     <>
-      <Header />
+      <Header currUser={currUser} setCurrUser={setCurrUser} />
       {isLoading ? <p>Loading...</p> : (
         <div className='container mt-4'>
           <div className='row'>

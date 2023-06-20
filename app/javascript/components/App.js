@@ -1,16 +1,19 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Editor from './Editor';
+import React, { useState } from 'react';
+import User from './User';
 import { ToastContainer } from 'react-toastify';
 
-const App = () => (
-  <>
-    <Routes>
-      <Route path = "events/*" element = { <Editor />} />
-    </Routes>
+const App = () => {
 
-    <ToastContainer />
-  </>
-);
+  const [currUser, setCurrUser] = useState(null);
+
+  return(
+    <>
+      <User currUser = {currUser} setCurrUser = {setCurrUser} />
+      
+      <ToastContainer />
+    </>
+  )
+
+};
 
 export default App;

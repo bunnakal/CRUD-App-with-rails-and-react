@@ -5353,3 +5353,1552 @@ Processing by Api::EventsController#index as */*
 Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.5ms | Allocations: 1612)
 
 
+Started GET "/events/6" for ::1 at 2023-06-15 14:42:08 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  Parameters: {"id"=>"6"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 313)
+  Rendered layout layouts/application.html.erb (Duration: 744.4ms | Allocations: 29549)
+Completed 200 OK in 767ms (Views: 751.3ms | ActiveRecord: 0.0ms | Allocations: 35739)
+
+
+Started GET "/api/events" for ::1 at 2023-06-15 14:42:10 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 49ms (Views: 25.7ms | ActiveRecord: 16.0ms | Allocations: 19796)
+
+
+Started GET "/api/events" for ::1 at 2023-06-15 14:42:10 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 1612)
+
+
+Started GET "/" for ::1 at 2023-06-16 09:35:10 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/events" for ::1 at 2023-06-16 09:35:11 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 313)
+  Rendered layout layouts/application.html.erb (Duration: 268.9ms | Allocations: 25861)
+Completed 200 OK in 291ms (Views: 275.3ms | ActiveRecord: 0.0ms | Allocations: 32008)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 09:35:12 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 63ms (Views: 47.1ms | ActiveRecord: 9.9ms | Allocations: 19755)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 09:35:12 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.4ms | Allocations: 1612)
+
+
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1750736849146080915)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20230616024445)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (57.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (24.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230616024445"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1750736849146080915)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1750736849146080915)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateJwtDenylist (20230616025112)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "jwt_denylists" ("id" bigserial primary key, "jti" character varying NOT NULL, "exp" timestamp(6) NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE INDEX "index_jwt_denylist_on_jti" ON "jwt_denylist" ("jti")[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1750736849146080915)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1750736849146080915)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateJwtDenylist (20230616025112)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "jwt_denylist" ("id" bigserial primary key, "jti" character varying NOT NULL, "exp" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_jwt_denylist_on_jti" ON "jwt_denylist" ("jti")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230616025112"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1750736849146080915)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-06-16 09:58:47 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/events" for ::1 at 2023-06-16 09:58:47 +0700
+Processing by SiteController#index as HTML
+Completed 401 Unauthorized in 59ms (ActiveRecord: 0.0ms | Allocations: 5107)
+
+
+Started GET "/" for ::1 at 2023-06-16 09:58:47 +0700
+Started GET "/events" for ::1 at 2023-06-16 09:58:47 +0700
+Processing by SiteController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/login" for ::1 at 2023-06-16 09:58:57 +0700
+Processing by Users::SessionsController#new as HTML
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 4.9ms | Allocations: 18023)
+
+
+Started GET "/" for ::1 at 2023-06-16 09:59:08 +0700
+Started GET "/events" for ::1 at 2023-06-16 09:59:08 +0700
+Processing by SiteController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 222)
+
+
+Started GET "/signup" for ::1 at 2023-06-16 09:59:12 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+Started GET "/" for ::1 at 2023-06-16 10:08:45 +0700
+Started GET "/events" for ::1 at 2023-06-16 10:08:45 +0700
+Processing by SiteController#index as HTML
+Completed 401 Unauthorized in 2ms (Allocations: 212)
+
+
+Started GET "/" for ::1 at 2023-06-16 10:08:45 +0700
+Started GET "/events" for ::1 at 2023-06-16 10:08:45 +0700
+Processing by SiteController#index as HTML
+Completed 401 Unauthorized in 2ms (Allocations: 227)
+
+
+Started GET "/" for ::1 at 2023-06-16 12:14:43 +0700
+Started GET "/events" for ::1 at 2023-06-16 12:14:43 +0700
+Processing by SiteController#index as HTML
+Completed 401 Unauthorized in 6ms (Allocations: 2136)
+
+
+Started GET "/" for ::1 at 2023-06-16 12:14:43 +0700
+Started GET "/events" for ::1 at 2023-06-16 12:14:43 +0700
+Processing by SiteController#index as HTML
+Completed 401 Unauthorized in 1ms (Allocations: 219)
+
+
+Started GET "/" for ::1 at 2023-06-16 12:15:06 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/events" for ::1 at 2023-06-16 12:15:06 +0700
+Processing by SiteController#index as HTML
+Completed 401 Unauthorized in 22ms (ActiveRecord: 0.0ms | Allocations: 4739)
+
+
+Started GET "/" for ::1 at 2023-06-16 12:15:06 +0700
+Started GET "/events" for ::1 at 2023-06-16 12:15:06 +0700
+Processing by SiteController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 223)
+
+
+Started GET "/" for ::1 at 2023-06-16 12:15:11 +0700
+Started GET "/events" for ::1 at 2023-06-16 12:15:12 +0700
+Processing by SiteController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 230)
+
+
+Started GET "/login" for ::1 at 2023-06-16 12:15:14 +0700
+Processing by Users::SessionsController#new as HTML
+Completed 200 OK in 27ms (Views: 0.6ms | ActiveRecord: 5.8ms | Allocations: 17782)
+
+
+Started GET "/private/test" for ::1 at 2023-06-16 12:16:53 +0700
+  
+SyntaxError (/Users/localadmin/Documents/event_manager/app/controllers/private_controller.rb:3: syntax error, unexpected ':', expecting `end'
+  before_action: authenticate_user!
+               ^
+):
+  
+app/controllers/private_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/private_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/private_controller.rb:3: syntax error, unexpected ':', expecting `end'
+Started GET "/" for ::1 at 2023-06-16 12:17:48 +0700
+Started GET "/events" for ::1 at 2023-06-16 12:17:48 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 110)
+  Rendered layout layouts/application.html.erb (Duration: 1394.8ms | Allocations: 72610)
+Completed 200 OK in 1399ms (Views: 1397.6ms | ActiveRecord: 0.0ms | Allocations: 73594)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 12:17:50 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 58ms (Views: 28.0ms | ActiveRecord: 22.7ms | Allocations: 17883)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 12:17:50 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.6ms | Allocations: 1620)
+
+
+Started GET "/private/test" for ::1 at 2023-06-16 12:17:55 +0700
+Processing by PrivateController#test as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 2136)
+
+
+Started GET "/" for ::1 at 2023-06-16 12:18:20 +0700
+Started GET "/events" for ::1 at 2023-06-16 12:18:20 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2485)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 2718)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 12:18:21 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.8ms | Allocations: 1628)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 12:18:21 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.5ms | Allocations: 1620)
+
+
+Started GET "/" for ::1 at 2023-06-16 12:21:17 +0700
+Started GET "/events" for ::1 at 2023-06-16 12:21:17 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 588.8ms | Allocations: 46140)
+Completed 200 OK in 590ms (Views: 589.8ms | ActiveRecord: 0.0ms | Allocations: 46369)
+
+
+Started GET "/events" for ::1 at 2023-06-16 12:21:38 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 2480)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 2709)
+
+
+Started GET "/" for ::1 at 2023-06-16 12:24:15 +0700
+Started GET "/events" for ::1 at 2023-06-16 12:24:15 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 486.5ms | Allocations: 47647)
+Completed 200 OK in 488ms (Views: 487.6ms | Allocations: 47877)
+
+
+Started GET "/events" for ::1 at 2023-06-16 12:25:48 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 426.1ms | Allocations: 47087)
+Completed 200 OK in 427ms (Views: 426.7ms | Allocations: 47316)
+
+
+Started GET "/" for ::1 at 2023-06-16 12:26:51 +0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/localadmin/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/localadmin/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.4ms | Allocations: 467)
+Completed 200 OK in 6ms (Views: 4.0ms | Allocations: 1235)
+
+
+Started GET "/private/test" for ::1 at 2023-06-16 12:27:13 +0700
+Processing by PrivateController#test as HTML
+Completed 401 Unauthorized in 11ms (Allocations: 2144)
+
+
+Started GET "/App" for ::1 at 2023-06-16 12:27:43 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/App"):
+  
+Started GET "/" for ::1 at 2023-06-16 12:27:51 +0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/localadmin/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/localadmin/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.4ms | Allocations: 451)
+Completed 200 OK in 4ms (Views: 2.9ms | Allocations: 1182)
+
+
+Started GET "/" for ::1 at 2023-06-16 12:28:17 +0700
+Started GET "/events" for ::1 at 2023-06-16 12:28:17 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 111)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 2850)
+Completed 200 OK in 12ms (Views: 10.7ms | Allocations: 3800)
+
+
+Started GET "/events" for ::1 at 2023-06-16 12:31:44 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 432.1ms | Allocations: 47637)
+Completed 200 OK in 433ms (Views: 432.7ms | Allocations: 47867)
+
+
+Started GET "/events" for ::1 at 2023-06-16 12:33:39 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 586.4ms | Allocations: 51417)
+Completed 200 OK in 588ms (Views: 587.6ms | Allocations: 51647)
+
+
+Started GET "/events" for ::1 at 2023-06-16 12:34:40 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 476.3ms | Allocations: 45874)
+Completed 200 OK in 478ms (Views: 477.1ms | Allocations: 46103)
+
+
+Started GET "/events" for ::1 at 2023-06-16 12:35:07 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 488.3ms | Allocations: 46645)
+Completed 200 OK in 489ms (Views: 488.9ms | Allocations: 46875)
+
+
+Started GET "/events" for ::1 at 2023-06-16 12:40:54 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 446.9ms | Allocations: 46147)
+Completed 200 OK in 448ms (Views: 447.4ms | Allocations: 46376)
+
+
+Started GET "/events" for ::1 at 2023-06-16 12:41:47 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 470.6ms | Allocations: 46701)
+Completed 200 OK in 471ms (Views: 471.2ms | Allocations: 46932)
+
+
+Started GET "/events" for ::1 at 2023-06-16 12:43:05 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 449.7ms | Allocations: 47634)
+Completed 200 OK in 451ms (Views: 450.2ms | Allocations: 47864)
+
+
+Started POST "/signup" for ::1 at 2023-06-16 12:43:21 +0700
+Processing by Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:9:in `create'
+  [1m[36mUser Create (9.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "bunnakal@ispp.edu.kh"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-06-16 05:43:21.984556"], ["updated_at", "2023-06-16 05:43:21.984556"]]
+  ↳ app/controllers/users/registrations_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:9:in `create'
+Completed 200 OK in 847ms (Views: 0.3ms | ActiveRecord: 33.1ms | Allocations: 10157)
+
+
+Started GET "/private/test" for ::1 at 2023-06-16 12:43:22 +0700
+Started GET "/api/events" for ::1 at 2023-06-16 12:43:22 +0700
+Processing by PrivateController#test as */*
+  Parameters: {"private"=>{}}
+Processing by Api::EventsController#index as */*
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtDenylist Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_denylist" WHERE "jwt_denylist"."jti" = $1 LIMIT $2[0m  [["jti", "1a829444-0c0e-4906-a4fa-c09d1475b3b1"], ["LIMIT", 1]]
+Completed 200 OK in 42ms (Views: 0.2ms | ActiveRecord: 8.6ms | Allocations: 8029)
+
+
+Started GET "/private/test" for ::1 at 2023-06-16 12:43:22 +0700
+Processing by PrivateController#test as */*
+  Parameters: {"private"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtDenylist Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_denylist" WHERE "jwt_denylist"."jti" = $1 LIMIT $2[0m  [["jti", "1a829444-0c0e-4906-a4fa-c09d1475b3b1"], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.2ms | Allocations: 2791)
+
+
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 72ms (Views: 23.6ms | ActiveRecord: 41.6ms | Allocations: 13477)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 12:43:22 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (8.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 17ms (Views: 8.6ms | ActiveRecord: 8.4ms | Allocations: 1620)
+
+
+Started DELETE "/logout" for ::1 at 2023-06-16 12:43:52 +0700
+Processing by Users::SessionsController#destroy as */*
+  Parameters: {"session"=>{}}
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 370)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtDenylist Load (3.7ms)[0m  [1m[34mSELECT "jwt_denylist".* FROM "jwt_denylist" WHERE "jwt_denylist"."jti" = $1 AND "jwt_denylist"."exp" = $2 LIMIT $3[0m  [["jti", "1a829444-0c0e-4906-a4fa-c09d1475b3b1"], ["exp", "2023-06-16 05:48:22"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJwtDenylist Create (0.8ms)[0m  [1m[32mINSERT INTO "jwt_denylist" ("jti", "exp") VALUES ($1, $2) RETURNING "id"[0m  [["jti", "1a829444-0c0e-4906-a4fa-c09d1475b3b1"], ["exp", "2023-06-16 05:48:22"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/events/" for ::1 at 2023-06-16 12:45:31 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 580.2ms | Allocations: 46688)
+Completed 200 OK in 582ms (Views: 580.8ms | ActiveRecord: 0.0ms | Allocations: 46918)
+
+
+Started GET "/events/" for ::1 at 2023-06-16 12:47:05 +0700
+Processing by SiteController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 2140)
+
+
+Started GET "/events/" for ::1 at 2023-06-16 12:47:41 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 428.6ms | Allocations: 48083)
+Completed 200 OK in 430ms (Views: 429.9ms | ActiveRecord: 0.0ms | Allocations: 48699)
+
+
+Started GET "/events/" for ::1 at 2023-06-16 12:51:43 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 593.8ms | Allocations: 47609)
+Completed 200 OK in 595ms (Views: 594.6ms | ActiveRecord: 0.0ms | Allocations: 47838)
+
+
+Started POST "/login" for ::1 at 2023-06-16 12:52:08 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 279ms (Views: 0.4ms | ActiveRecord: 22.9ms | Allocations: 4517)
+
+
+Started GET "/private/test" for ::1 at 2023-06-16 12:52:08 +0700
+Started GET "/api/events" for ::1 at 2023-06-16 12:52:08 +0700
+Processing by PrivateController#test as */*
+  Parameters: {"private"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by Api::EventsController#index as */*
+  [1m[36mJwtDenylist Exists? (3.6ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_denylist" WHERE "jwt_denylist"."jti" = $1 LIMIT $2[0m  [["jti", "d1501404-3667-4629-b57c-3eab78f03668"], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 7.6ms | Allocations: 5476)
+
+
+Started GET "/private/test" for ::1 at 2023-06-16 12:52:08 +0700
+Processing by PrivateController#test as */*
+  Parameters: {"private"=>{}}
+  [1m[36mEvent Load (16.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtDenylist Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_denylist" WHERE "jwt_denylist"."jti" = $1 LIMIT $2[0m  [["jti", "d1501404-3667-4629-b57c-3eab78f03668"], ["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 3320)
+
+
+Completed 200 OK in 57ms (Views: 29.3ms | ActiveRecord: 21.7ms | Allocations: 9330)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 12:52:08 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (2.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 2.4ms | Allocations: 1619)
+
+
+Started DELETE "/logout" for ::1 at 2023-06-16 12:53:12 +0700
+Processing by Users::SessionsController#destroy as */*
+  Parameters: {"session"=>{}}
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 259)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtDenylist Load (0.4ms)[0m  [1m[34mSELECT "jwt_denylist".* FROM "jwt_denylist" WHERE "jwt_denylist"."jti" = $1 AND "jwt_denylist"."exp" = $2 LIMIT $3[0m  [["jti", "d1501404-3667-4629-b57c-3eab78f03668"], ["exp", "2023-06-16 05:57:08"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJwtDenylist Create (0.4ms)[0m  [1m[32mINSERT INTO "jwt_denylist" ("jti", "exp") VALUES ($1, $2) RETURNING "id"[0m  [["jti", "d1501404-3667-4629-b57c-3eab78f03668"], ["exp", "2023-06-16 05:57:08"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/login" for ::1 at 2023-06-16 12:53:23 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 184)
+
+
+Started GET "/events" for ::1 at 2023-06-16 12:56:30 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 115)
+  Rendered layout layouts/application.html.erb (Duration: 441.4ms | Allocations: 46942)
+Completed 200 OK in 447ms (Views: 445.4ms | ActiveRecord: 0.0ms | Allocations: 47949)
+
+
+Started POST "/login" for ::1 at 2023-06-16 12:56:44 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 268ms (Views: 0.4ms | ActiveRecord: 7.8ms | Allocations: 4177)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 12:56:45 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 9.7ms | ActiveRecord: 5.7ms | Allocations: 4158)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 12:56:45 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 1620)
+
+
+Started GET "/events" for ::1 at 2023-06-16 12:57:35 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 437.8ms | Allocations: 47545)
+Completed 200 OK in 439ms (Views: 438.4ms | ActiveRecord: 0.0ms | Allocations: 47776)
+
+
+Started POST "/login" for ::1 at 2023-06-16 12:57:38 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 184)
+
+
+Started POST "/login" for ::1 at 2023-06-16 12:57:40 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started POST "/login" for ::1 at 2023-06-16 12:57:42 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started POST "/login" for ::1 at 2023-06-16 12:57:50 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 246ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 1536)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 12:57:50 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 12:57:50 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 1.8ms | Allocations: 1620)
+
+
+Started GET "/events/2" for ::1 at 2023-06-16 13:03:08 +0700
+Processing by SiteController#index as HTML
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 527.3ms | Allocations: 47117)
+Completed 200 OK in 528ms (Views: 528.1ms | Allocations: 47346)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:03:15 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 310ms (Views: 0.4ms | ActiveRecord: 12.4ms | Allocations: 4545)
+
+
+Started GET "/events/2" for ::1 at 2023-06-16 13:06:27 +0700
+Processing by SiteController#index as HTML
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 457.4ms | Allocations: 47079)
+Completed 200 OK in 459ms (Views: 458.3ms | ActiveRecord: 0.0ms | Allocations: 47308)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:06:36 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 252ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 1535)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:06:37 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 1.1ms | Allocations: 1682)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:06:37 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.4ms | Allocations: 1620)
+
+
+Started GET "/events/6" for ::1 at 2023-06-16 13:28:16 +0700
+Processing by SiteController#index as HTML
+  Parameters: {"id"=>"6"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 455.4ms | Allocations: 48022)
+Completed 200 OK in 457ms (Views: 456.1ms | Allocations: 48251)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:28:25 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 278ms (Views: 0.5ms | ActiveRecord: 13.7ms | Allocations: 4456)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:28:26 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 1682)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:28:26 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 1620)
+
+
+Started GET "/events/6" for ::1 at 2023-06-16 13:29:19 +0700
+Processing by SiteController#index as HTML
+  Parameters: {"id"=>"6"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 488.7ms | Allocations: 48072)
+Completed 200 OK in 490ms (Views: 489.6ms | ActiveRecord: 0.0ms | Allocations: 48301)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:29:26 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 252ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1539)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:29:26 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (2.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 2.4ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:29:26 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.4ms | Allocations: 1620)
+
+
+Started GET "/events/6" for ::1 at 2023-06-16 13:30:20 +0700
+Processing by SiteController#index as HTML
+  Parameters: {"id"=>"6"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 543.4ms | Allocations: 47123)
+Completed 200 OK in 544ms (Views: 544.0ms | ActiveRecord: 0.0ms | Allocations: 47352)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:30:28 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 274ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 1541)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:30:28 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (2.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 2.6ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:30:28 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.5ms | Allocations: 1620)
+
+
+Started GET "/events/6" for ::1 at 2023-06-16 13:31:29 +0700
+Processing by SiteController#index as HTML
+  Parameters: {"id"=>"6"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 525.4ms | Allocations: 47574)
+Completed 200 OK in 526ms (Views: 526.0ms | ActiveRecord: 0.0ms | Allocations: 47804)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:31:36 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 250ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1541)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:31:36 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.4ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:31:36 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 2.1ms | Allocations: 1620)
+
+
+Started GET "/events/6" for ::1 at 2023-06-16 13:32:51 +0700
+Processing by SiteController#index as HTML
+  Parameters: {"id"=>"6"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 489.7ms | Allocations: 47623)
+Completed 200 OK in 491ms (Views: 490.6ms | ActiveRecord: 0.0ms | Allocations: 47852)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:32:58 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 270ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1554)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:32:59 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:32:59 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.4ms | Allocations: 1620)
+
+
+Started GET "/events/6" for ::1 at 2023-06-16 13:33:44 +0700
+Processing by SiteController#index as HTML
+  Parameters: {"id"=>"6"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 444.6ms | Allocations: 47577)
+Completed 200 OK in 445ms (Views: 445.1ms | ActiveRecord: 0.0ms | Allocations: 47806)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:33:50 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 263ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1536)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:33:50 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:33:50 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 1620)
+
+
+Started GET "/events/6" for ::1 at 2023-06-16 13:34:58 +0700
+Processing by SiteController#index as HTML
+  Parameters: {"id"=>"6"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 479.7ms | Allocations: 47091)
+Completed 200 OK in 481ms (Views: 480.3ms | ActiveRecord: 0.0ms | Allocations: 47321)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:35:05 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 254ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1541)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:35:05 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:35:05 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms | Allocations: 1620)
+
+
+Started GET "/events/6" for ::1 at 2023-06-16 13:35:49 +0700
+Processing by SiteController#index as HTML
+  Parameters: {"id"=>"6"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 505.0ms | Allocations: 47026)
+Completed 200 OK in 506ms (Views: 505.6ms | ActiveRecord: 0.0ms | Allocations: 47255)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:35:55 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1536)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:35:56 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:35:56 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 1620)
+
+
+Started GET "/events" for ::1 at 2023-06-16 13:39:13 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 439.9ms | Allocations: 47529)
+Completed 200 OK in 441ms (Views: 440.5ms | ActiveRecord: 0.0ms | Allocations: 47758)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:39:19 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 259ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1536)
+
+
+Started GET "/events" for ::1 at 2023-06-16 13:40:32 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 589.6ms | Allocations: 48535)
+Completed 200 OK in 591ms (Views: 590.4ms | ActiveRecord: 0.0ms | Allocations: 48765)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:40:38 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 277ms (Views: 1.6ms | ActiveRecord: 0.6ms | Allocations: 1540)
+
+
+Started GET "/events" for ::1 at 2023-06-16 13:41:44 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 451.3ms | Allocations: 48074)
+Completed 200 OK in 452ms (Views: 452.0ms | ActiveRecord: 0.0ms | Allocations: 48304)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:41:50 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 258ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1535)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:41:51 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 1.6ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:41:51 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.8ms | Allocations: 1620)
+
+
+Started GET "/events" for ::1 at 2023-06-16 13:42:12 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 554.8ms | Allocations: 52142)
+Completed 200 OK in 556ms (Views: 555.5ms | ActiveRecord: 0.0ms | Allocations: 52371)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:42:18 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 237ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1540)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:42:18 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:42:18 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 1620)
+
+
+Started GET "/events/new" for ::1 at 2023-06-16 13:43:27 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 441.0ms | Allocations: 48119)
+Completed 200 OK in 442ms (Views: 441.8ms | ActiveRecord: 0.0ms | Allocations: 48348)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:43:32 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 292ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1537)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:43:33 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.4ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:43:33 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.5ms | Allocations: 1620)
+
+
+Started GET "/events/new" for ::1 at 2023-06-16 13:45:44 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 447.1ms | Allocations: 47084)
+Completed 200 OK in 448ms (Views: 447.6ms | ActiveRecord: 0.0ms | Allocations: 47313)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:45:50 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 259ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1539)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:45:50 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:45:50 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 1620)
+
+
+Started GET "/events/new" for ::1 at 2023-06-16 13:49:29 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 454.0ms | Allocations: 46657)
+Completed 200 OK in 456ms (Views: 455.3ms | ActiveRecord: 0.0ms | Allocations: 46886)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:49:36 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 1537)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:49:37 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.4ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:49:37 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.3ms | Allocations: 1620)
+
+
+Started GET "/events/new" for ::1 at 2023-06-16 13:50:34 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 481.1ms | Allocations: 47175)
+Completed 200 OK in 482ms (Views: 481.7ms | ActiveRecord: 0.0ms | Allocations: 47404)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:50:40 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1536)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:50:40 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (5.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 3.4ms | ActiveRecord: 5.3ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:50:40 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 38ms (Views: 36.9ms | ActiveRecord: 0.3ms | Allocations: 1620)
+
+
+Started GET "/events/new" for ::1 at 2023-06-16 13:51:14 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 480.2ms | Allocations: 47601)
+Completed 200 OK in 481ms (Views: 480.8ms | ActiveRecord: 0.0ms | Allocations: 47830)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:51:21 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 270ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 1541)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:51:21 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:51:21 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 1620)
+
+
+Started PUT "/api/events/1" for ::1 at 2023-06-16 13:51:53 +0700
+Processing by Api::EventsController#update as JSON
+  Parameters: {"event_type"=>"Symposium", "event_date"=>"2022-07-14", "title"=>"Ada Lovelace — The Making of a Computer Scientist", "speaker"=>"Monica S. Lam, Yoky Matsuoka, Dorit Aharonov", "host"=>"Ursula Martin", "published"=>true, "id"=>"1", "created_at"=>"2023-06-07T04:15:29.976Z", "updated_at"=>"2023-06-07T04:15:29.976Z", "event"=>{"id"=>"1", "event_type"=>"Symposium", "event_date"=>"2022-07-14", "title"=>"Ada Lovelace — The Making of a Computer Scientist", "speaker"=>"Monica S. Lam, Yoky Matsuoka, Dorit Aharonov", "host"=>"Ursula Martin", "published"=>true, "created_at"=>"2023-06-07T04:15:29.976Z", "updated_at"=>"2023-06-07T04:15:29.976Z"}}
+Can't verify CSRF token authenticity.
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/events_controller.rb:38:in `set_event'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/events_controller.rb:24:in `update'
+  [1m[36mEvent Update (0.8ms)[0m  [1m[33mUPDATE "events" SET "published" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["published", true], ["updated_at", "2023-06-16 06:51:53.179770"], ["id", 1]]
+  ↳ app/controllers/api/events_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/events_controller.rb:24:in `update'
+Completed 200 OK in 20ms (Views: 0.6ms | ActiveRecord: 6.6ms | Allocations: 3247)
+
+
+Started GET "/events/6/edit" for ::1 at 2023-06-16 13:54:00 +0700
+Processing by SiteController#index as HTML
+  Parameters: {"id"=>"6"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 504.3ms | Allocations: 48121)
+Completed 200 OK in 505ms (Views: 505.0ms | ActiveRecord: 0.0ms | Allocations: 48350)
+
+
+Started POST "/login" for ::1 at 2023-06-16 13:54:07 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 261ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 1536)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:54:07 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 13:54:07 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (5.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 8.5ms | ActiveRecord: 5.2ms | Allocations: 1620)
+
+
+Started GET "/events/" for ::1 at 2023-06-16 14:11:03 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 438.1ms | Allocations: 47102)
+Completed 200 OK in 439ms (Views: 438.9ms | Allocations: 47331)
+
+
+Started GET "/events/" for ::1 at 2023-06-16 14:11:50 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 584.4ms | Allocations: 48118)
+Completed 200 OK in 589ms (Views: 586.9ms | Allocations: 48347)
+
+
+Started GET "/events/" for ::1 at 2023-06-16 14:12:44 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 662.8ms | Allocations: 48611)
+Completed 200 OK in 665ms (Views: 664.5ms | Allocations: 48840)
+
+
+Started GET "/events/" for ::1 at 2023-06-16 14:13:51 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 563.1ms | Allocations: 47650)
+Completed 200 OK in 564ms (Views: 563.7ms | Allocations: 47880)
+
+
+Started GET "/events/" for ::1 at 2023-06-16 14:16:07 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2473)
+Completed 200 OK in 24ms (Views: 24.0ms | Allocations: 2702)
+
+
+Started GET "/events/" for ::1 at 2023-06-16 14:21:01 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2505)
+Completed 200 OK in 6ms (Views: 5.5ms | Allocations: 2734)
+
+
+Started GET "/events/" for ::1 at 2023-06-16 14:21:45 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 2485)
+Completed 200 OK in 7ms (Views: 6.4ms | Allocations: 2714)
+
+
+Started GET "/events/" for ::1 at 2023-06-16 14:22:20 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 457.2ms | Allocations: 47573)
+Completed 200 OK in 458ms (Views: 457.8ms | Allocations: 47803)
+
+
+Started POST "/login" for ::1 at 2023-06-16 14:22:26 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 352ms (Views: 0.4ms | ActiveRecord: 15.9ms | Allocations: 4543)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 14:22:27 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.6ms | Allocations: 1682)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 14:22:27 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 1620)
+
+
+Started GET "/events/6" for ::1 at 2023-06-16 14:24:36 +0700
+Processing by SiteController#index as HTML
+  Parameters: {"id"=>"6"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 434.1ms | Allocations: 46635)
+Completed 200 OK in 435ms (Views: 434.8ms | ActiveRecord: 0.0ms | Allocations: 46864)
+
+
+Started POST "/login" for ::1 at 2023-06-16 14:24:43 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 249ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1539)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 14:24:43 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 14:24:43 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 1.2ms | Allocations: 1620)
+
+
+Started GET "/events" for ::1 at 2023-06-16 14:38:49 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 2493)
+Completed 200 OK in 15ms (Views: 14.9ms | Allocations: 2722)
+
+
+Started GET "/events" for ::1 at 2023-06-16 14:41:11 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 452.4ms | Allocations: 47883)
+Completed 200 OK in 454ms (Views: 453.6ms | Allocations: 48113)
+
+
+Started GET "/events" for ::1 at 2023-06-16 14:41:37 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 443.0ms | Allocations: 48099)
+Completed 200 OK in 444ms (Views: 443.6ms | Allocations: 48328)
+
+
+Started GET "/events" for ::1 at 2023-06-16 15:00:23 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 430.1ms | Allocations: 46682)
+Completed 200 OK in 431ms (Views: 430.8ms | Allocations: 46911)
+
+
+Started POST "/login" for ::1 at 2023-06-16 15:00:45 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 280ms (Views: 0.5ms | ActiveRecord: 12.9ms | Allocations: 4515)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 15:00:46 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 1682)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 15:00:46 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms | Allocations: 1620)
+
+
+Started DELETE "/logout" for ::1 at 2023-06-16 15:00:58 +0700
+Processing by Users::SessionsController#destroy as */*
+  Parameters: {"session"=>{}}
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 261)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtDenylist Load (3.3ms)[0m  [1m[34mSELECT "jwt_denylist".* FROM "jwt_denylist" WHERE "jwt_denylist"."jti" = $1 AND "jwt_denylist"."exp" = $2 LIMIT $3[0m  [["jti", "1ffa7681-46c9-4947-a1f0-e2ac6937a2bd"], ["exp", "2023-06-16 08:05:46"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJwtDenylist Create (0.8ms)[0m  [1m[32mINSERT INTO "jwt_denylist" ("jti", "exp") VALUES ($1, $2) RETURNING "id"[0m  [["jti", "1ffa7681-46c9-4947-a1f0-e2ac6937a2bd"], ["exp", "2023-06-16 08:05:46"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/events/6" for ::1 at 2023-06-16 15:01:07 +0700
+Processing by SiteController#index as HTML
+  Parameters: {"id"=>"6"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2487)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 2716)
+
+
+Started POST "/signup" for ::1 at 2023-06-16 15:01:25 +0700
+Processing by Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"kal.bunna@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"kal.bunna@gmail.com", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:9:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "kal.bunna@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-06-16 08:01:26.067572"], ["updated_at", "2023-06-16 08:01:26.067572"]]
+  ↳ app/controllers/users/registrations_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:9:in `create'
+Completed 200 OK in 244ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 2340)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 15:01:26 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 1620)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 15:01:26 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 1.5ms | Allocations: 1620)
+
+
+Started DELETE "/logout" for ::1 at 2023-06-16 15:30:12 +0700
+Processing by Users::SessionsController#destroy as */*
+  Parameters: {"session"=>{}}
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | Allocations: 263)
+
+
+Started POST "/login" for ::1 at 2023-06-16 15:30:22 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 253ms (Views: 0.3ms | ActiveRecord: 11.7ms | Allocations: 4457)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 15:30:22 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.3ms | Allocations: 1682)
+
+
+Started GET "/api/events" for ::1 at 2023-06-16 15:30:22 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 1.4ms | Allocations: 1620)
+
+
+Started GET "/events" for ::1 at 2023-06-20 08:50:52 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 52.8ms | Allocations: 2485)
+Completed 200 OK in 72ms (Views: 65.3ms | Allocations: 2714)
+
+
+Started POST "/login" for ::1 at 2023-06-20 08:51:01 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 382ms (Views: 2.9ms | ActiveRecord: 20.9ms | Allocations: 4456)
+
+
+Started GET "/api/events" for ::1 at 2023-06-20 08:51:01 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.9ms | Allocations: 1682)
+
+
+Started GET "/api/events" for ::1 at 2023-06-20 08:51:01 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 1.3ms | Allocations: 1620)
+
+
+Started DELETE "/logout" for ::1 at 2023-06-20 08:54:21 +0700
+Processing by Users::SessionsController#destroy as */*
+  Parameters: {"session"=>{}}
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 257)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtDenylist Load (2.7ms)[0m  [1m[34mSELECT "jwt_denylist".* FROM "jwt_denylist" WHERE "jwt_denylist"."jti" = $1 AND "jwt_denylist"."exp" = $2 LIMIT $3[0m  [["jti", "d938d32d-2fb5-439f-9618-655da1665131"], ["exp", "2023-06-20 01:56:01"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJwtDenylist Create (3.4ms)[0m  [1m[32mINSERT INTO "jwt_denylist" ("jti", "exp") VALUES ($1, $2) RETURNING "id"[0m  [["jti", "d938d32d-2fb5-439f-9618-655da1665131"], ["exp", "2023-06-20 01:56:01"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/e" for ::1 at 2023-06-20 08:54:35 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/e"):
+  
+Started GET "/" for ::1 at 2023-06-20 08:54:38 +0700
+Started GET "/events" for ::1 at 2023-06-20 08:54:38 +0700
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2479)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 2708)
+
+
+Started POST "/login" for ::1 at 2023-06-20 08:55:39 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 260ms (ActiveRecord: 0.4ms | Allocations: 1221)
+
+
+Started POST "/login" for ::1 at 2023-06-20 08:55:45 +0700
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"bunnakal@ispp.edu.kh", "password"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bunnakal@ispp.edu.kh"], ["LIMIT", 1]]
+Completed 200 OK in 270ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1535)
+
+
+Started GET "/api/events" for ::1 at 2023-06-20 08:55:45 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 1619)
+
+
+Started GET "/api/events" for ::1 at 2023-06-20 08:55:45 +0700
+Processing by Api::EventsController#index as */*
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/events_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 1.2ms | Allocations: 1620)
+
+
+Started PUT "/api/events/1" for ::1 at 2023-06-20 08:55:49 +0700
+Processing by Api::EventsController#update as JSON
+  Parameters: {"event_type"=>"Symposium", "event_date"=>"2022-07-14", "title"=>"Ada Lovelace — The Making of a Computer Scientist", "speaker"=>"Monica S. Lam, Yoky Matsuoka, Dorit Aharonov", "host"=>"Ursula Martin", "published"=>true, "id"=>"1", "created_at"=>"2023-06-07T04:15:29.976Z", "updated_at"=>"2023-06-16T06:51:53.179Z", "event"=>{"id"=>"1", "event_type"=>"Symposium", "event_date"=>"2022-07-14", "title"=>"Ada Lovelace — The Making of a Computer Scientist", "speaker"=>"Monica S. Lam, Yoky Matsuoka, Dorit Aharonov", "host"=>"Ursula Martin", "published"=>true, "created_at"=>"2023-06-07T04:15:29.976Z", "updated_at"=>"2023-06-16T06:51:53.179Z"}}
+Can't verify CSRF token authenticity.
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/events_controller.rb:38:in `set_event'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/events_controller.rb:24:in `update'
+  [1m[36mEvent Update (0.5ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1 WHERE "events"."id" = $2[0m  [["updated_at", "2023-06-16 06:51:53.179000"], ["id", 1]]
+  ↳ app/controllers/api/events_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/events_controller.rb:24:in `update'
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 2.3ms | Allocations: 2628)
+
+

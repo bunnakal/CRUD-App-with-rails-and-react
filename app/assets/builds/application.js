@@ -1667,7 +1667,7 @@
             }
             return dispatcher.useContext(Context2);
           }
-          function useState6(initialState) {
+          function useState9(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1675,7 +1675,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useReducer(reducer, initialArg, init);
           }
-          function useRef5(initialValue) {
+          function useRef7(initialValue) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
@@ -2468,8 +2468,8 @@
           exports.useLayoutEffect = useLayoutEffect3;
           exports.useMemo = useMemo3;
           exports.useReducer = useReducer;
-          exports.useRef = useRef5;
-          exports.useState = useState6;
+          exports.useRef = useRef7;
+          exports.useState = useState9;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -2965,9 +2965,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React10 = require_react();
+          var React14 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React10.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React14.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -4572,7 +4572,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React10.Children.forEach(props.children, function(child) {
+                  React14.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -13019,7 +13019,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React10.Component().refs;
+          var emptyRefsObject = new React14.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -37168,7 +37168,7 @@
   defineJQueryPlugin(Toast);
 
   // app/javascript/application.js
-  var import_react8 = __toESM(require_react());
+  var import_react13 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/dist/index.js
@@ -38936,22 +38936,147 @@
   }
 
   // app/javascript/components/App.js
-  var import_react7 = __toESM(require_react());
+  var import_react12 = __toESM(require_react());
+
+  // app/javascript/components/User.js
+  var import_react10 = __toESM(require_react());
+
+  // app/javascript/components/Signup.js
+  var import_react = __toESM(require_react());
+  var Signup = ({ setCurrUser, setShow }) => {
+    const formRef = (0, import_react.useRef)();
+    const signup = async (userInfo, setCurrUser2) => {
+      try {
+        const response = await fetch("/signup", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            "accept": "application/json"
+          },
+          body: JSON.stringify(userInfo)
+        });
+        const data = await response.json();
+        if (!response.ok)
+          throw data.error;
+        localStorage.setItem("token", response.headers.get("Authorization"));
+        setCurrUser2(data);
+      } catch (error3) {
+        console.log("error", error3);
+      }
+    };
+    const handleSubmit = (e2) => {
+      e2.preventDefault();
+      const formData = new FormData(formRef.current);
+      const data = Object.fromEntries(formData);
+      const userInfo = {
+        "user": {
+          email: data.email,
+          password: data.password
+        }
+      };
+      signup(userInfo, setCurrUser);
+      e2.target.reset();
+    };
+    const handleClick = (e2) => {
+      e2.preventDefault();
+      setShow(true);
+    };
+    return /* @__PURE__ */ import_react.default.createElement("div", { className: "container" }, /* @__PURE__ */ import_react.default.createElement("h1", null, "Signup"), /* @__PURE__ */ import_react.default.createElement("form", { ref: formRef, onSubmit: handleSubmit }, /* @__PURE__ */ import_react.default.createElement("div", { className: "mb-2" }, /* @__PURE__ */ import_react.default.createElement("label", { htmlFor: "email", className: "form-label" }, "Email"), /* @__PURE__ */ import_react.default.createElement("input", { type: "email", name: "email", placeholder: "email", className: "form-control" })), /* @__PURE__ */ import_react.default.createElement("div", { className: "mb-2" }, /* @__PURE__ */ import_react.default.createElement("label", { htmlFor: "password", className: "form-label" }, "Password"), /* @__PURE__ */ import_react.default.createElement("input", { type: "password", name: "password", placeholder: "password", className: "form-control" })), /* @__PURE__ */ import_react.default.createElement("div", { className: "mb-2 form-action" }, /* @__PURE__ */ import_react.default.createElement("input", { type: "submit", value: "Signup", className: "btn btn-primary" }))), /* @__PURE__ */ import_react.default.createElement("br", null), /* @__PURE__ */ import_react.default.createElement("div", null, "Already registered, ", /* @__PURE__ */ import_react.default.createElement("a", { href: "#login", onClick: handleClick }, "Login"), " here."));
+  };
+  var Signup_default = Signup;
+
+  // app/javascript/components/Login.js
+  var import_react2 = __toESM(require_react());
+  var Login = ({ setCurrUser, setShow }) => {
+    const formRef = (0, import_react2.useRef)();
+    const login = async (userInfo, setCurrUser2) => {
+      try {
+        const response = await fetch("/login", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            "accept": "application/json"
+          },
+          body: JSON.stringify(userInfo)
+        });
+        const data = await response.json();
+        if (!response.ok)
+          throw data.error;
+        localStorage.setItem("token", response.headers.get("Authorization"));
+        setCurrUser2(data);
+      } catch (error3) {
+        console.log("error", error3);
+      }
+    };
+    const handleSubmit = (e2) => {
+      e2.preventDefault();
+      const formData = new FormData(formRef.current);
+      const data = Object.fromEntries(formData);
+      const userInfo = {
+        "user": {
+          email: data.email,
+          password: data.password
+        }
+      };
+      login(userInfo, setCurrUser);
+      e2.target.reset();
+    };
+    const handleClick = (e2) => {
+      e2.preventDefault();
+      setShow(false);
+    };
+    return /* @__PURE__ */ import_react2.default.createElement("div", { className: "container" }, /* @__PURE__ */ import_react2.default.createElement("h1", null, "Login"), /* @__PURE__ */ import_react2.default.createElement("form", { ref: formRef, onSubmit: handleSubmit }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "mb-2" }, /* @__PURE__ */ import_react2.default.createElement("label", { htmlFor: "email", className: "form-label" }, "Email"), /* @__PURE__ */ import_react2.default.createElement("input", { type: "email", name: "email", placeholder: "email", className: "form-control" })), /* @__PURE__ */ import_react2.default.createElement("div", { className: "mb-2" }, /* @__PURE__ */ import_react2.default.createElement("label", { htmlFor: "password", className: "form-label" }, "Password"), /* @__PURE__ */ import_react2.default.createElement("input", { type: "password", name: "password", placeholder: "password", className: "form-control" })), /* @__PURE__ */ import_react2.default.createElement("div", { className: "form-action mb-2" }, /* @__PURE__ */ import_react2.default.createElement("input", { type: "submit", value: "Login", className: "btn btn-success" }))), /* @__PURE__ */ import_react2.default.createElement("br", null), /* @__PURE__ */ import_react2.default.createElement("div", null, "Not registered yet, ", /* @__PURE__ */ import_react2.default.createElement("a", { href: "#signup", onClick: handleClick }, " Signup")));
+  };
+  var Login_default = Login;
+
+  // app/javascript/components/Logout.js
+  var import_react3 = __toESM(require_react());
+  var Logout = ({ setCurrUser }) => {
+    const logout = async (setCurrUser2) => {
+      try {
+        const response = await fetch("/logout", {
+          method: "DELETE",
+          headers: {
+            "content-type": "application/json",
+            "authorization": localStorage.getItem("token")
+          }
+        });
+        const data = await response.json();
+        if (!response.ok)
+          throw data.error;
+        localStorage.removeItem("token");
+        setCurrUser2(null);
+      } catch (error3) {
+        console.log("Error", error3);
+      }
+    };
+    const handleClick = (e2) => {
+      e2.preventDefault();
+      logout(setCurrUser);
+    };
+    return /* @__PURE__ */ import_react3.default.createElement("div", null, /* @__PURE__ */ import_react3.default.createElement("input", { type: "button", value: "Logout", className: "btn btn-danger", onClick: handleClick }));
+  };
+  var Logout_default = Logout;
+
+  // app/javascript/components/User.js
+  var import_react11 = __toESM(require_react());
 
   // app/javascript/components/Editor.js
-  var import_react6 = __toESM(require_react());
+  var import_react9 = __toESM(require_react());
 
   // app/javascript/components/Header.js
-  var import_react = __toESM(require_react());
-  var Header = () => /* @__PURE__ */ import_react.default.createElement("nav", { className: "navbar navbar-expand-lg navbar-dark bg-dark" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "container" }, /* @__PURE__ */ import_react.default.createElement(Link, { to: "/events", className: "navbar-brand d-flex w-50 me-auto" }, /* @__PURE__ */ import_react.default.createElement("h3", null, "Event Manager")), /* @__PURE__ */ import_react.default.createElement("button", { className: "navbar-toggler", type: "button", "data-bs-toggle": "collapse", "data-bs-target": "#collapsingNavbar3" }, /* @__PURE__ */ import_react.default.createElement("span", { className: "navbar-toggler-icon" })), /* @__PURE__ */ import_react.default.createElement("div", { className: "navbar-collapse collapse w-100", id: "collapsingNavbar3" }, /* @__PURE__ */ import_react.default.createElement("input", { className: "form-control w-100 justify-content-end", type: "search", placeholder: "Search", "aria-label": "Search" }), /* @__PURE__ */ import_react.default.createElement("ul", { className: "nav navbar-nav ms-auto w-100 justify-content-end" }, /* @__PURE__ */ import_react.default.createElement("li", { className: "nav-item" }, /* @__PURE__ */ import_react.default.createElement(Link, { className: "btn btn-success", to: "/events/new" }, "New Event"))))));
+  var import_react4 = __toESM(require_react());
+  var Header = ({ currUser, setCurrUser }) => {
+    return /* @__PURE__ */ import_react4.default.createElement("nav", { className: "navbar navbar-expand-lg navbar-dark bg-dark" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "container-fluid" }, /* @__PURE__ */ import_react4.default.createElement(Link, { to: "/events", className: "navbar-brand d-flex w-50 me-auto" }, "Hello, ", currUser.email), /* @__PURE__ */ import_react4.default.createElement("ul", { className: "navbar-nav ms-auto mb-2 mb-lg-0" }, /* @__PURE__ */ import_react4.default.createElement("li", { className: "nav-item" }, /* @__PURE__ */ import_react4.default.createElement(Link, { className: "btn btn-success", to: "/events/new" }, "New Event")), /* @__PURE__ */ import_react4.default.createElement("li", null, "\xA0 \xA0"), /* @__PURE__ */ import_react4.default.createElement("li", null, /* @__PURE__ */ import_react4.default.createElement(Logout_default, { setCurrUser })))));
+  };
   var Header_default = Header;
 
   // app/javascript/components/EventList.js
-  var import_react2 = __toESM(require_react());
+  var import_react5 = __toESM(require_react());
   var import_prop_types = __toESM(require_prop_types());
   var EventList = ({ events }) => {
-    const [searchTerm, setSearchTerm] = (0, import_react2.useState)("");
-    const searchInput = (0, import_react2.useRef)(null);
+    const [searchTerm, setSearchTerm] = (0, import_react5.useState)("");
+    const searchInput = (0, import_react5.useRef)(null);
     const updateSearchTerm = () => {
       setSearchTerm(searchInput.current.value);
       console.log(searchInput.current.value);
@@ -38963,9 +39088,9 @@
       );
     };
     const renderEvents = (eventArray) => {
-      return eventArray.filter((el) => matchSearchTerm(el)).sort((a2, b2) => new Date(b2.event_date) - new Date(a2.event_date)).map((event) => /* @__PURE__ */ import_react2.default.createElement("li", { key: event.id, className: "list-group-item" }, /* @__PURE__ */ import_react2.default.createElement(NavLink, { to: `/events/${event.id}`, className: "nav-link" }, event.event_date, " - ", event.event_type)));
+      return eventArray.filter((el) => matchSearchTerm(el)).sort((a2, b2) => new Date(b2.event_date) - new Date(a2.event_date)).map((event) => /* @__PURE__ */ import_react5.default.createElement("li", { key: event.id, className: "list-group-item" }, /* @__PURE__ */ import_react5.default.createElement(NavLink, { to: `/events/${event.id}`, className: "nav-link" }, event.event_date, " - ", event.event_type)));
     };
-    return /* @__PURE__ */ import_react2.default.createElement("section", null, /* @__PURE__ */ import_react2.default.createElement(
+    return /* @__PURE__ */ import_react5.default.createElement("section", null, /* @__PURE__ */ import_react5.default.createElement(
       "input",
       {
         className: "form-control",
@@ -38974,7 +39099,7 @@
         ref: searchInput,
         onKeyUp: updateSearchTerm
       }
-    ), /* @__PURE__ */ import_react2.default.createElement("ul", { className: "list-group mt-2" }, renderEvents(events)));
+    ), /* @__PURE__ */ import_react5.default.createElement("ul", { className: "list-group mt-2" }, renderEvents(events)));
   };
   EventList.propTypes = {
     events: import_prop_types.default.arrayOf(import_prop_types.default.shape({
@@ -38990,12 +39115,12 @@
   var EventList_default = EventList;
 
   // app/javascript/components/Event.js
-  var import_react3 = __toESM(require_react());
+  var import_react6 = __toESM(require_react());
   var import_prop_types2 = __toESM(require_prop_types());
   var Event2 = ({ events, onDelete }) => {
     const { id } = useParams();
     const event = events.find((e2) => e2.id === Number(id));
-    return /* @__PURE__ */ import_react3.default.createElement("div", { className: "card" }, /* @__PURE__ */ import_react3.default.createElement("h5", { className: "card-header" }, event.event_date, " - ", event.event_type), /* @__PURE__ */ import_react3.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react3.default.createElement("ul", null, /* @__PURE__ */ import_react3.default.createElement("li", null, /* @__PURE__ */ import_react3.default.createElement("strong", null, "Type:"), event.event_type), /* @__PURE__ */ import_react3.default.createElement("li", null, /* @__PURE__ */ import_react3.default.createElement("strong", null, "Date:"), event.event_date), /* @__PURE__ */ import_react3.default.createElement("li", null, /* @__PURE__ */ import_react3.default.createElement("strong", null, "Title:"), event.title), /* @__PURE__ */ import_react3.default.createElement("li", null, /* @__PURE__ */ import_react3.default.createElement("strong", null, "Speaker:"), event.speaker), /* @__PURE__ */ import_react3.default.createElement("li", null, /* @__PURE__ */ import_react3.default.createElement("strong", null, "Host:"), event.host), /* @__PURE__ */ import_react3.default.createElement("li", null, /* @__PURE__ */ import_react3.default.createElement("strong", null, "published:"), event.published)), /* @__PURE__ */ import_react3.default.createElement(Link, { to: `/events/${event.id}/edit`, className: "btn btn-warning" }, "Edit"), "\xA0 \xA0", /* @__PURE__ */ import_react3.default.createElement(
+    return /* @__PURE__ */ import_react6.default.createElement("div", { className: "card" }, /* @__PURE__ */ import_react6.default.createElement("h5", { className: "card-header" }, event.event_date, " - ", event.event_type), /* @__PURE__ */ import_react6.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react6.default.createElement("ul", null, /* @__PURE__ */ import_react6.default.createElement("li", null, /* @__PURE__ */ import_react6.default.createElement("strong", null, "Type:"), event.event_type), /* @__PURE__ */ import_react6.default.createElement("li", null, /* @__PURE__ */ import_react6.default.createElement("strong", null, "Date:"), event.event_date), /* @__PURE__ */ import_react6.default.createElement("li", null, /* @__PURE__ */ import_react6.default.createElement("strong", null, "Title:"), event.title), /* @__PURE__ */ import_react6.default.createElement("li", null, /* @__PURE__ */ import_react6.default.createElement("strong", null, "Speaker:"), event.speaker), /* @__PURE__ */ import_react6.default.createElement("li", null, /* @__PURE__ */ import_react6.default.createElement("strong", null, "Host:"), event.host), /* @__PURE__ */ import_react6.default.createElement("li", null, /* @__PURE__ */ import_react6.default.createElement("strong", null, "published:"), event.published)), /* @__PURE__ */ import_react6.default.createElement(Link, { to: `/events/${event.id}/edit`, className: "btn btn-warning" }, "Edit"), "\xA0 \xA0", /* @__PURE__ */ import_react6.default.createElement(
       "button",
       {
         className: "btn btn-danger",
@@ -39022,10 +39147,10 @@
   var Event_default = Event2;
 
   // app/javascript/components/EventForm.js
-  var import_react5 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
 
   // node_modules/react-toastify/dist/react-toastify.esm.mjs
-  var import_react4 = __toESM(require_react(), 1);
+  var import_react7 = __toESM(require_react(), 1);
 
   // node_modules/clsx/dist/clsx.m.js
   function r(e2) {
@@ -39053,7 +39178,7 @@
   var d = (t2) => "string" == typeof t2;
   var p = (t2) => "function" == typeof t2;
   var m = (t2) => d(t2) || p(t2) ? t2 : null;
-  var f = (t2) => (0, import_react4.isValidElement)(t2) || d(t2) || p(t2) || u(t2);
+  var f = (t2) => (0, import_react7.isValidElement)(t2) || d(t2) || p(t2) || u(t2);
   function g(t2, e2, n2) {
     void 0 === n2 && (n2 = 300);
     const { scrollHeight: o2, style: s2 } = t2;
@@ -39067,18 +39192,18 @@
     let { enter: a2, exit: r3, appendPosition: i2 = false, collapse: l2 = true, collapseDuration: c = 300 } = e2;
     return function(e3) {
       let { children: u2, position: d2, preventExitTransition: p2, done: m2, nodeRef: f2, isIn: h2 } = e3;
-      const y2 = i2 ? `${a2}--${d2}` : a2, v2 = i2 ? `${r3}--${d2}` : r3, T2 = (0, import_react4.useRef)(0);
-      return (0, import_react4.useLayoutEffect)(() => {
+      const y2 = i2 ? `${a2}--${d2}` : a2, v2 = i2 ? `${r3}--${d2}` : r3, T2 = (0, import_react7.useRef)(0);
+      return (0, import_react7.useLayoutEffect)(() => {
         const t2 = f2.current, e4 = y2.split(" "), n2 = (o2) => {
           o2.target === f2.current && (t2.dispatchEvent(new Event("d")), t2.removeEventListener("animationend", n2), t2.removeEventListener("animationcancel", n2), 0 === T2.current && "animationcancel" !== o2.type && t2.classList.remove(...e4));
         };
         t2.classList.add(...e4), t2.addEventListener("animationend", n2), t2.addEventListener("animationcancel", n2);
-      }, []), (0, import_react4.useEffect)(() => {
+      }, []), (0, import_react7.useEffect)(() => {
         const t2 = f2.current, e4 = () => {
           t2.removeEventListener("animationend", e4), l2 ? g(t2, m2, c) : m2();
         };
         h2 || (p2 ? e4() : (T2.current = 1, t2.className += ` ${v2}`, t2.addEventListener("animationend", e4)));
-      }, [h2]), import_react4.default.createElement(import_react4.default.Fragment, null, u2);
+      }, [h2]), import_react7.default.createElement(import_react7.default.Fragment, null, u2);
     };
   }
   function y(t2, e2) {
@@ -39105,21 +39230,21 @@
   } };
   var T = (e2) => {
     let { theme: n2, type: o2, ...s2 } = e2;
-    return import_react4.default.createElement("svg", { viewBox: "0 0 24 24", width: "100%", height: "100%", fill: "colored" === n2 ? "currentColor" : `var(--toastify-icon-color-${o2})`, ...s2 });
+    return import_react7.default.createElement("svg", { viewBox: "0 0 24 24", width: "100%", height: "100%", fill: "colored" === n2 ? "currentColor" : `var(--toastify-icon-color-${o2})`, ...s2 });
   };
   var E = { info: function(e2) {
-    return import_react4.default.createElement(T, { ...e2 }, import_react4.default.createElement("path", { d: "M12 0a12 12 0 1012 12A12.013 12.013 0 0012 0zm.25 5a1.5 1.5 0 11-1.5 1.5 1.5 1.5 0 011.5-1.5zm2.25 13.5h-4a1 1 0 010-2h.75a.25.25 0 00.25-.25v-4.5a.25.25 0 00-.25-.25h-.75a1 1 0 010-2h1a2 2 0 012 2v4.75a.25.25 0 00.25.25h.75a1 1 0 110 2z" }));
+    return import_react7.default.createElement(T, { ...e2 }, import_react7.default.createElement("path", { d: "M12 0a12 12 0 1012 12A12.013 12.013 0 0012 0zm.25 5a1.5 1.5 0 11-1.5 1.5 1.5 1.5 0 011.5-1.5zm2.25 13.5h-4a1 1 0 010-2h.75a.25.25 0 00.25-.25v-4.5a.25.25 0 00-.25-.25h-.75a1 1 0 010-2h1a2 2 0 012 2v4.75a.25.25 0 00.25.25h.75a1 1 0 110 2z" }));
   }, warning: function(e2) {
-    return import_react4.default.createElement(T, { ...e2 }, import_react4.default.createElement("path", { d: "M23.32 17.191L15.438 2.184C14.728.833 13.416 0 11.996 0c-1.42 0-2.733.833-3.443 2.184L.533 17.448a4.744 4.744 0 000 4.368C1.243 23.167 2.555 24 3.975 24h16.05C22.22 24 24 22.044 24 19.632c0-.904-.251-1.746-.68-2.44zm-9.622 1.46c0 1.033-.724 1.823-1.698 1.823s-1.698-.79-1.698-1.822v-.043c0-1.028.724-1.822 1.698-1.822s1.698.79 1.698 1.822v.043zm.039-12.285l-.84 8.06c-.057.581-.408.943-.897.943-.49 0-.84-.367-.896-.942l-.84-8.065c-.057-.624.25-1.095.779-1.095h1.91c.528.005.84.476.784 1.1z" }));
+    return import_react7.default.createElement(T, { ...e2 }, import_react7.default.createElement("path", { d: "M23.32 17.191L15.438 2.184C14.728.833 13.416 0 11.996 0c-1.42 0-2.733.833-3.443 2.184L.533 17.448a4.744 4.744 0 000 4.368C1.243 23.167 2.555 24 3.975 24h16.05C22.22 24 24 22.044 24 19.632c0-.904-.251-1.746-.68-2.44zm-9.622 1.46c0 1.033-.724 1.823-1.698 1.823s-1.698-.79-1.698-1.822v-.043c0-1.028.724-1.822 1.698-1.822s1.698.79 1.698 1.822v.043zm.039-12.285l-.84 8.06c-.057.581-.408.943-.897.943-.49 0-.84-.367-.896-.942l-.84-8.065c-.057-.624.25-1.095.779-1.095h1.91c.528.005.84.476.784 1.1z" }));
   }, success: function(e2) {
-    return import_react4.default.createElement(T, { ...e2 }, import_react4.default.createElement("path", { d: "M12 0a12 12 0 1012 12A12.014 12.014 0 0012 0zm6.927 8.2l-6.845 9.289a1.011 1.011 0 01-1.43.188l-4.888-3.908a1 1 0 111.25-1.562l4.076 3.261 6.227-8.451a1 1 0 111.61 1.183z" }));
+    return import_react7.default.createElement(T, { ...e2 }, import_react7.default.createElement("path", { d: "M12 0a12 12 0 1012 12A12.014 12.014 0 0012 0zm6.927 8.2l-6.845 9.289a1.011 1.011 0 01-1.43.188l-4.888-3.908a1 1 0 111.25-1.562l4.076 3.261 6.227-8.451a1 1 0 111.61 1.183z" }));
   }, error: function(e2) {
-    return import_react4.default.createElement(T, { ...e2 }, import_react4.default.createElement("path", { d: "M11.983 0a12.206 12.206 0 00-8.51 3.653A11.8 11.8 0 000 12.207 11.779 11.779 0 0011.8 24h.214A12.111 12.111 0 0024 11.791 11.766 11.766 0 0011.983 0zM10.5 16.542a1.476 1.476 0 011.449-1.53h.027a1.527 1.527 0 011.523 1.47 1.475 1.475 0 01-1.449 1.53h-.027a1.529 1.529 0 01-1.523-1.47zM11 12.5v-6a1 1 0 012 0v6a1 1 0 11-2 0z" }));
+    return import_react7.default.createElement(T, { ...e2 }, import_react7.default.createElement("path", { d: "M11.983 0a12.206 12.206 0 00-8.51 3.653A11.8 11.8 0 000 12.207 11.779 11.779 0 0011.8 24h.214A12.111 12.111 0 0024 11.791 11.766 11.766 0 0011.983 0zM10.5 16.542a1.476 1.476 0 011.449-1.53h.027a1.527 1.527 0 011.523 1.47 1.475 1.475 0 01-1.449 1.53h-.027a1.529 1.529 0 01-1.523-1.47zM11 12.5v-6a1 1 0 012 0v6a1 1 0 11-2 0z" }));
   }, spinner: function() {
-    return import_react4.default.createElement("div", { className: "Toastify__spinner" });
+    return import_react7.default.createElement("div", { className: "Toastify__spinner" });
   } };
   function C(t2) {
-    const [, o2] = (0, import_react4.useReducer)((t3) => t3 + 1, 0), [l2, c] = (0, import_react4.useState)([]), g2 = (0, import_react4.useRef)(null), h2 = (0, import_react4.useRef)(/* @__PURE__ */ new Map()).current, T2 = (t3) => -1 !== l2.indexOf(t3), C2 = (0, import_react4.useRef)({ toastKey: 1, displayedToast: 0, count: 0, queue: [], props: t2, containerId: null, isToastActive: T2, getToast: (t3) => h2.get(t3) }).current;
+    const [, o2] = (0, import_react7.useReducer)((t3) => t3 + 1, 0), [l2, c] = (0, import_react7.useState)([]), g2 = (0, import_react7.useRef)(null), h2 = (0, import_react7.useRef)(/* @__PURE__ */ new Map()).current, T2 = (t3) => -1 !== l2.indexOf(t3), C2 = (0, import_react7.useRef)({ toastKey: 1, displayedToast: 0, count: 0, queue: [], props: t2, containerId: null, isToastActive: T2, getToast: (t3) => h2.get(t3) }).current;
     function b2(t3) {
       let { containerId: e2 } = t3;
       const { limit: n2 } = C2.props;
@@ -39164,10 +39289,10 @@
       M2.iconOut = function(t4) {
         let { theme: n3, type: o3, isLoading: s3, icon: r4 } = t4, i3 = null;
         const l4 = { theme: n3, type: o3 };
-        return false === r4 || (p(r4) ? i3 = r4(l4) : (0, import_react4.isValidElement)(r4) ? i3 = (0, import_react4.cloneElement)(r4, l4) : d(r4) || u(r4) ? i3 = r4 : s3 ? i3 = E.spinner() : ((t5) => t5 in E)(o3) && (i3 = E[o3](l4))), i3;
+        return false === r4 || (p(r4) ? i3 = r4(l4) : (0, import_react7.isValidElement)(r4) ? i3 = (0, import_react7.cloneElement)(r4, l4) : d(r4) || u(r4) ? i3 = r4 : s3 ? i3 = E.spinner() : ((t5) => t5 in E)(o3) && (i3 = E[o3](l4))), i3;
       }(M2), p(i2.onOpen) && (M2.onOpen = i2.onOpen), p(i2.onClose) && (M2.onClose = i2.onClose), M2.closeButton = b3.closeButton, false === i2.closeButton || f(i2.closeButton) ? M2.closeButton = i2.closeButton : true === i2.closeButton && (M2.closeButton = !f(b3.closeButton) || b3.closeButton);
       let x2 = t3;
-      (0, import_react4.isValidElement)(t3) && !d(t3.type) ? x2 = (0, import_react4.cloneElement)(t3, { closeToast: L3, toastProps: M2, data: T3 }) : p(t3) && (x2 = t3({ closeToast: L3, toastProps: M2, data: T3 })), b3.limit && b3.limit > 0 && C2.count > b3.limit && N2 ? C2.queue.push({ toastContent: x2, toastProps: M2, staleId: r3 }) : u(s2) ? setTimeout(() => {
+      (0, import_react7.isValidElement)(t3) && !d(t3.type) ? x2 = (0, import_react7.cloneElement)(t3, { closeToast: L3, toastProps: M2, data: T3 }) : p(t3) && (x2 = t3({ closeToast: L3, toastProps: M2, data: T3 })), b3.limit && b3.limit > 0 && C2.count > b3.limit && N2 ? C2.queue.push({ toastContent: x2, toastProps: M2, staleId: r3 }) : u(s2) ? setTimeout(() => {
         O2(x2, M2, r3);
       }, s2) : O2(x2, M2, r3);
     }
@@ -39177,9 +39302,9 @@
       const s2 = { content: t3, props: e2 };
       h2.set(o3, s2), c((t4) => [...t4, o3].filter((t5) => t5 !== n2)), v.emit(4, y(s2, null == s2.props.updateId ? "added" : "updated"));
     }
-    return (0, import_react4.useEffect)(() => (C2.containerId = t2.containerId, v.cancelEmit(3).on(0, L2).on(1, (t3) => g2.current && I2(t3)).on(5, b2).emit(2, C2), () => {
+    return (0, import_react7.useEffect)(() => (C2.containerId = t2.containerId, v.cancelEmit(3).on(0, L2).on(1, (t3) => g2.current && I2(t3)).on(5, b2).emit(2, C2), () => {
       h2.clear(), v.emit(3, C2);
-    }), []), (0, import_react4.useEffect)(() => {
+    }), []), (0, import_react7.useEffect)(() => {
       C2.props = t2, C2.isToastActive = T2, C2.displayedToast = l2.length;
     }), { getToastToRender: function(e2) {
       const n2 = /* @__PURE__ */ new Map(), o3 = Array.from(h2.values());
@@ -39196,7 +39321,7 @@
     return t2.targetTouches && t2.targetTouches.length >= 1 ? t2.targetTouches[0].clientY : t2.clientY;
   }
   function _(t2) {
-    const [o2, a2] = (0, import_react4.useState)(false), [r3, l2] = (0, import_react4.useState)(false), c = (0, import_react4.useRef)(null), u2 = (0, import_react4.useRef)({ start: 0, x: 0, y: 0, delta: 0, removalDistance: 0, canCloseOnClick: true, canDrag: false, boundingRect: null, didMove: false }).current, d2 = (0, import_react4.useRef)(t2), { autoClose: m2, pauseOnHover: f2, closeToast: g2, onClick: h2, closeOnClick: y2 } = t2;
+    const [o2, a2] = (0, import_react7.useState)(false), [r3, l2] = (0, import_react7.useState)(false), c = (0, import_react7.useRef)(null), u2 = (0, import_react7.useRef)({ start: 0, x: 0, y: 0, delta: 0, removalDistance: 0, canCloseOnClick: true, canDrag: false, boundingRect: null, didMove: false }).current, d2 = (0, import_react7.useRef)(t2), { autoClose: m2, pauseOnHover: f2, closeToast: g2, onClick: h2, closeOnClick: y2 } = t2;
     function v2(e2) {
       if (t2.draggable) {
         "touchstart" === e2.nativeEvent.type && e2.nativeEvent.preventDefault(), u2.didMove = false, document.addEventListener("mousemove", _2), document.addEventListener("mouseup", L2), document.addEventListener("touchmove", _2), document.addEventListener("touchend", L2);
@@ -39229,12 +39354,12 @@
         e2.style.transition = "transform 0.2s, opacity 0.2s", e2.style.transform = `translate${t2.draggableDirection}(0)`, e2.style.opacity = "1";
       }
     }
-    (0, import_react4.useEffect)(() => {
+    (0, import_react7.useEffect)(() => {
       d2.current = t2;
-    }), (0, import_react4.useEffect)(() => (c.current && c.current.addEventListener("d", E2, { once: true }), p(t2.onOpen) && t2.onOpen((0, import_react4.isValidElement)(t2.children) && t2.children.props), () => {
+    }), (0, import_react7.useEffect)(() => (c.current && c.current.addEventListener("d", E2, { once: true }), p(t2.onOpen) && t2.onOpen((0, import_react7.isValidElement)(t2.children) && t2.children.props), () => {
       const t3 = d2.current;
-      p(t3.onClose) && t3.onClose((0, import_react4.isValidElement)(t3.children) && t3.children.props);
-    }), []), (0, import_react4.useEffect)(() => (t2.pauseOnFocusLoss && (document.hasFocus() || C2(), window.addEventListener("focus", E2), window.addEventListener("blur", C2)), () => {
+      p(t3.onClose) && t3.onClose((0, import_react7.isValidElement)(t3.children) && t3.children.props);
+    }), []), (0, import_react7.useEffect)(() => (t2.pauseOnFocusLoss && (document.hasFocus() || C2(), window.addEventListener("focus", E2), window.addEventListener("blur", C2)), () => {
       t2.pauseOnFocusLoss && (window.removeEventListener("focus", E2), window.removeEventListener("blur", C2));
     }), [t2.pauseOnFocusLoss]);
     const O2 = { onMouseDown: v2, onTouchStart: v2, onMouseUp: T2, onTouchEnd: T2 };
@@ -39244,23 +39369,23 @@
   }
   function L(e2) {
     let { closeToast: n2, theme: o2, ariaLabel: s2 = "close" } = e2;
-    return import_react4.default.createElement("button", { className: `Toastify__close-button Toastify__close-button--${o2}`, type: "button", onClick: (t2) => {
+    return import_react7.default.createElement("button", { className: `Toastify__close-button Toastify__close-button--${o2}`, type: "button", onClick: (t2) => {
       t2.stopPropagation(), n2(t2);
-    }, "aria-label": s2 }, import_react4.default.createElement("svg", { "aria-hidden": "true", viewBox: "0 0 14 16" }, import_react4.default.createElement("path", { fillRule: "evenodd", d: "M7.71 8.23l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75L1 11.98l3.75-3.75L1 4.48 2.48 3l3.75 3.75L9.98 3l1.48 1.48-3.75 3.75z" })));
+    }, "aria-label": s2 }, import_react7.default.createElement("svg", { "aria-hidden": "true", viewBox: "0 0 14 16" }, import_react7.default.createElement("path", { fillRule: "evenodd", d: "M7.71 8.23l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75L1 11.98l3.75-3.75L1 4.48 2.48 3l3.75 3.75L9.98 3l1.48 1.48-3.75 3.75z" })));
   }
   function O(e2) {
     let { delay: n2, isRunning: o2, closeToast: s2, type: a2 = "default", hide: r3, className: i2, style: l2, controlledProgress: u2, progress: d2, rtl: m2, isIn: f2, theme: g2 } = e2;
     const h2 = r3 || u2 && 0 === d2, y2 = { ...l2, animationDuration: `${n2}ms`, animationPlayState: o2 ? "running" : "paused", opacity: h2 ? 0 : 1 };
     u2 && (y2.transform = `scaleX(${d2})`);
     const v2 = clsx_m_default("Toastify__progress-bar", u2 ? "Toastify__progress-bar--controlled" : "Toastify__progress-bar--animated", `Toastify__progress-bar-theme--${g2}`, `Toastify__progress-bar--${a2}`, { "Toastify__progress-bar--rtl": m2 }), T2 = p(i2) ? i2({ rtl: m2, type: a2, defaultClassName: v2 }) : clsx_m_default(v2, i2);
-    return import_react4.default.createElement("div", { role: "progressbar", "aria-hidden": h2 ? "true" : "false", "aria-label": "notification timer", className: T2, style: y2, [u2 && d2 >= 1 ? "onTransitionEnd" : "onAnimationEnd"]: u2 && d2 < 1 ? null : () => {
+    return import_react7.default.createElement("div", { role: "progressbar", "aria-hidden": h2 ? "true" : "false", "aria-label": "notification timer", className: T2, style: y2, [u2 && d2 >= 1 ? "onTransitionEnd" : "onAnimationEnd"]: u2 && d2 < 1 ? null : () => {
       f2 && s2();
     } });
   }
   var N = (n2) => {
     const { isRunning: o2, preventExitTransition: s2, toastRef: r3, eventHandlers: i2 } = _(n2), { closeButton: l2, children: u2, autoClose: d2, onClick: m2, type: f2, hideProgressBar: g2, closeToast: h2, transition: y2, position: v2, className: T2, style: E2, bodyClassName: C2, bodyStyle: b2, progressClassName: I2, progressStyle: N2, updateId: M2, role: R2, progress: w2, rtl: x2, toastId: $2, deleteToast: k2, isIn: P2, isLoading: B2, iconOut: D2, closeOnClick: A2, theme: z2 } = n2, F2 = clsx_m_default("Toastify__toast", `Toastify__toast-theme--${z2}`, `Toastify__toast--${f2}`, { "Toastify__toast--rtl": x2 }, { "Toastify__toast--close-on-click": A2 }), H2 = p(T2) ? T2({ rtl: x2, position: v2, type: f2, defaultClassName: F2 }) : clsx_m_default(F2, T2), S2 = !!w2 || !d2, q2 = { closeToast: h2, type: f2, theme: z2 };
     let Q2 = null;
-    return false === l2 || (Q2 = p(l2) ? l2(q2) : (0, import_react4.isValidElement)(l2) ? (0, import_react4.cloneElement)(l2, q2) : L(q2)), import_react4.default.createElement(y2, { isIn: P2, done: k2, position: v2, preventExitTransition: s2, nodeRef: r3 }, import_react4.default.createElement("div", { id: $2, onClick: m2, className: H2, ...i2, style: E2, ref: r3 }, import_react4.default.createElement("div", { ...P2 && { role: R2 }, className: p(C2) ? C2({ type: f2 }) : clsx_m_default("Toastify__toast-body", C2), style: b2 }, null != D2 && import_react4.default.createElement("div", { className: clsx_m_default("Toastify__toast-icon", { "Toastify--animate-icon Toastify__zoom-enter": !B2 }) }, D2), import_react4.default.createElement("div", null, u2)), Q2, import_react4.default.createElement(O, { ...M2 && !S2 ? { key: `pb-${M2}` } : {}, rtl: x2, theme: z2, delay: d2, isRunning: o2, isIn: P2, closeToast: h2, hide: g2, type: f2, style: N2, className: I2, controlledProgress: S2, progress: w2 || 0 })));
+    return false === l2 || (Q2 = p(l2) ? l2(q2) : (0, import_react7.isValidElement)(l2) ? (0, import_react7.cloneElement)(l2, q2) : L(q2)), import_react7.default.createElement(y2, { isIn: P2, done: k2, position: v2, preventExitTransition: s2, nodeRef: r3 }, import_react7.default.createElement("div", { id: $2, onClick: m2, className: H2, ...i2, style: E2, ref: r3 }, import_react7.default.createElement("div", { ...P2 && { role: R2 }, className: p(C2) ? C2({ type: f2 }) : clsx_m_default("Toastify__toast-body", C2), style: b2 }, null != D2 && import_react7.default.createElement("div", { className: clsx_m_default("Toastify__toast-icon", { "Toastify--animate-icon Toastify__zoom-enter": !B2 }) }, D2), import_react7.default.createElement("div", null, u2)), Q2, import_react7.default.createElement(O, { ...M2 && !S2 ? { key: `pb-${M2}` } : {}, rtl: x2, theme: z2, delay: d2, isRunning: o2, isIn: P2, closeToast: h2, hide: g2, type: f2, style: N2, className: I2, controlledProgress: S2, progress: w2 || 0 })));
   };
   var M = function(t2, e2) {
     return void 0 === e2 && (e2 = false), { enter: `Toastify--animate Toastify__${t2}-enter`, exit: `Toastify--animate Toastify__${t2}-exit`, appendPosition: e2 };
@@ -39269,19 +39394,19 @@
   var w = h(M("slide", true));
   var x = h(M("zoom"));
   var $ = h(M("flip"));
-  var k = (0, import_react4.forwardRef)((e2, n2) => {
+  var k = (0, import_react7.forwardRef)((e2, n2) => {
     const { getToastToRender: o2, containerRef: a2, isToastActive: r3 } = C(e2), { className: i2, style: l2, rtl: u2, containerId: d2 } = e2;
     function f2(t2) {
       const e3 = clsx_m_default("Toastify__toast-container", `Toastify__toast-container--${t2}`, { "Toastify__toast-container--rtl": u2 });
       return p(i2) ? i2({ position: t2, rtl: u2, defaultClassName: e3 }) : clsx_m_default(e3, m(i2));
     }
-    return (0, import_react4.useEffect)(() => {
+    return (0, import_react7.useEffect)(() => {
       n2 && (n2.current = a2.current);
-    }, []), import_react4.default.createElement("div", { ref: a2, className: "Toastify", id: d2 }, o2((e3, n3) => {
+    }, []), import_react7.default.createElement("div", { ref: a2, className: "Toastify", id: d2 }, o2((e3, n3) => {
       const o3 = n3.length ? { ...l2 } : { ...l2, pointerEvents: "none" };
-      return import_react4.default.createElement("div", { className: f2(e3), style: o3, key: `container-${e3}` }, n3.map((e4, o4) => {
+      return import_react7.default.createElement("div", { className: f2(e3), style: o3, key: `container-${e3}` }, n3.map((e4, o4) => {
         let { content: s2, props: a3 } = e4;
-        return import_react4.default.createElement(N, { ...a3, isIn: r3(a3.toastId), style: { ...a3.style, "--nth": o4 + 1, "--len": n3.length }, key: `toast-${a3.key}` }, s2);
+        return import_react7.default.createElement(N, { ...a3, isIn: r3(a3.toastId), style: { ...a3.style, "--nth": o4 + 1, "--len": n3.length }, key: `toast-${a3.key}` }, s2);
       }));
     }));
   });
@@ -39408,7 +39533,7 @@
   var import_pikaday = __toESM(require_pikaday());
   var import_prop_types3 = __toESM(require_prop_types());
   var EventForm = ({ events, onSave }) => {
-    const [formErrors, setFormErrors] = (0, import_react5.useState)({});
+    const [formErrors, setFormErrors] = (0, import_react8.useState)({});
     const { id } = useParams();
     const defaults2 = {
       event_type: "",
@@ -39420,12 +39545,12 @@
     };
     const currEvent = id ? events.find((e2) => e2.id == Number(id)) : {};
     const initialEventState = { ...defaults2, ...currEvent };
-    const [event, setEvent] = (0, import_react5.useState)(initialEventState);
-    const dateInput = (0, import_react5.useRef)(null);
+    const [event, setEvent] = (0, import_react8.useState)(initialEventState);
+    const dateInput = (0, import_react8.useRef)(null);
     const updateEvent = (key, value) => {
       setEvent((prevEvent) => ({ ...prevEvent, [key]: value }));
     };
-    (0, import_react5.useEffect)(() => {
+    (0, import_react8.useEffect)(() => {
       const p2 = new import_pikaday.default({
         field: dateInput.current,
         toString: (date) => formatDate(date),
@@ -39437,7 +39562,7 @@
       });
       return () => p2.destroy();
     }, []);
-    (0, import_react5.useEffect)(() => {
+    (0, import_react8.useEffect)(() => {
       setEvent(initialEventState);
     }, [events]);
     const handleInputChange = (e2) => {
@@ -39450,7 +39575,7 @@
       if (isEmptyObject(formErrors)) {
         return null;
       }
-      return /* @__PURE__ */ import_react5.default.createElement("div", { className: "errors" }, /* @__PURE__ */ import_react5.default.createElement("h3", null, "The following errors prohibited the event from being saved:"), /* @__PURE__ */ import_react5.default.createElement("ul", null, Object.values(formErrors).map((formError) => /* @__PURE__ */ import_react5.default.createElement("li", { key: formError }, formError))));
+      return /* @__PURE__ */ import_react8.default.createElement("div", { className: "errors" }, /* @__PURE__ */ import_react8.default.createElement("h3", null, "The following errors prohibited the event from being saved:"), /* @__PURE__ */ import_react8.default.createElement("ul", null, Object.values(formErrors).map((formError) => /* @__PURE__ */ import_react8.default.createElement("li", { key: formError }, formError))));
     };
     const handleSubmit = (e2) => {
       e2.preventDefault();
@@ -39464,7 +39589,7 @@
     };
     const cancelURL = event.id ? `/events/${event.id}` : "/events";
     const title = event.id ? `${event.event_date} - ${event.event_type}` : "New Event";
-    return /* @__PURE__ */ import_react5.default.createElement("section", null, renderErrors(), /* @__PURE__ */ import_react5.default.createElement("h2", { className: "h4" }, " ", title), /* @__PURE__ */ import_react5.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "mb-2" }, /* @__PURE__ */ import_react5.default.createElement("label", { htmlFor: "event_type", className: "form-label" }, "Event type"), /* @__PURE__ */ import_react5.default.createElement(
+    return /* @__PURE__ */ import_react8.default.createElement("section", null, renderErrors(), /* @__PURE__ */ import_react8.default.createElement("h2", { className: "h4" }, " ", title), /* @__PURE__ */ import_react8.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "mb-2" }, /* @__PURE__ */ import_react8.default.createElement("label", { htmlFor: "event_type", className: "form-label" }, "Event type"), /* @__PURE__ */ import_react8.default.createElement(
       "input",
       {
         type: "text",
@@ -39474,7 +39599,7 @@
         value: event.event_type,
         onChange: handleInputChange
       }
-    )), /* @__PURE__ */ import_react5.default.createElement("div", { className: "mb-2" }, /* @__PURE__ */ import_react5.default.createElement("label", { htmlFor: "event_date" }, "Event date"), /* @__PURE__ */ import_react5.default.createElement(
+    )), /* @__PURE__ */ import_react8.default.createElement("div", { className: "mb-2" }, /* @__PURE__ */ import_react8.default.createElement("label", { htmlFor: "event_date" }, "Event date"), /* @__PURE__ */ import_react8.default.createElement(
       "input",
       {
         type: "text",
@@ -39486,7 +39611,7 @@
         value: event.event_date,
         onChange: handleInputChange
       }
-    )), /* @__PURE__ */ import_react5.default.createElement("div", { className: "mb-2" }, /* @__PURE__ */ import_react5.default.createElement("label", { htmlFor: "title" }, "Event title"), /* @__PURE__ */ import_react5.default.createElement(
+    )), /* @__PURE__ */ import_react8.default.createElement("div", { className: "mb-2" }, /* @__PURE__ */ import_react8.default.createElement("label", { htmlFor: "title" }, "Event title"), /* @__PURE__ */ import_react8.default.createElement(
       "textarea",
       {
         className: "form-control",
@@ -39496,7 +39621,7 @@
         value: event.title,
         onChange: handleInputChange
       }
-    )), /* @__PURE__ */ import_react5.default.createElement("div", { className: "mb-2" }, /* @__PURE__ */ import_react5.default.createElement("label", { htmlFor: "speaker" }, "Event Speaker"), /* @__PURE__ */ import_react5.default.createElement(
+    )), /* @__PURE__ */ import_react8.default.createElement("div", { className: "mb-2" }, /* @__PURE__ */ import_react8.default.createElement("label", { htmlFor: "speaker" }, "Event Speaker"), /* @__PURE__ */ import_react8.default.createElement(
       "input",
       {
         className: "form-control",
@@ -39506,7 +39631,7 @@
         value: event.speaker,
         onChange: handleInputChange
       }
-    )), /* @__PURE__ */ import_react5.default.createElement("div", { className: "mb-2" }, /* @__PURE__ */ import_react5.default.createElement("label", { htmlFor: "host" }, "Event host"), /* @__PURE__ */ import_react5.default.createElement(
+    )), /* @__PURE__ */ import_react8.default.createElement("div", { className: "mb-2" }, /* @__PURE__ */ import_react8.default.createElement("label", { htmlFor: "host" }, "Event host"), /* @__PURE__ */ import_react8.default.createElement(
       "input",
       {
         className: "form-control",
@@ -39516,7 +39641,7 @@
         value: event.host,
         onChange: handleInputChange
       }
-    )), /* @__PURE__ */ import_react5.default.createElement("div", { className: "form-check mb-2" }, /* @__PURE__ */ import_react5.default.createElement(
+    )), /* @__PURE__ */ import_react8.default.createElement("div", { className: "form-check mb-2" }, /* @__PURE__ */ import_react8.default.createElement(
       "input",
       {
         className: "form-check-input",
@@ -39527,7 +39652,7 @@
         checked: event.published,
         onChange: handleInputChange
       }
-    ), /* @__PURE__ */ import_react5.default.createElement("label", { className: "form-check-label", htmlFor: "published" }, "Published")), /* @__PURE__ */ import_react5.default.createElement("div", { className: "form-actions mb-2" }, /* @__PURE__ */ import_react5.default.createElement("button", { className: "btn btn-primary", type: "submit" }, "Save"), "\xA0 \xA0", /* @__PURE__ */ import_react5.default.createElement(Link, { to: cancelURL, className: "btn btn-secondary" }, "Cancel"))));
+    ), /* @__PURE__ */ import_react8.default.createElement("label", { className: "form-check-label", htmlFor: "published" }, "Published")), /* @__PURE__ */ import_react8.default.createElement("div", { className: "form-actions mb-2" }, /* @__PURE__ */ import_react8.default.createElement("button", { className: "btn btn-primary", type: "submit" }, "Save"), "\xA0 \xA0", /* @__PURE__ */ import_react8.default.createElement(Link, { to: cancelURL, className: "btn btn-secondary" }, "Cancel"))));
   };
   var EventForm_default = EventForm;
   EventForm.propTypes = {
@@ -39549,11 +39674,11 @@
   };
 
   // app/javascript/components/Editor.js
-  var Editor = () => {
-    const [events, setEvents] = (0, import_react6.useState)([]);
-    const [isLoading, setIsLoading] = (0, import_react6.useState)(true);
+  var Editor = ({ currUser, setCurrUser }) => {
+    const [events, setEvents] = (0, import_react9.useState)([]);
+    const [isLoading, setIsLoading] = (0, import_react9.useState)(true);
     const navigate = useNavigate();
-    (0, import_react6.useEffect)(() => {
+    (0, import_react9.useEffect)(() => {
       const fetchData = async () => {
         try {
           const response = await window.fetch("/api/events");
@@ -39631,30 +39756,67 @@
         handleAjaxError(error3);
       }
     };
-    return /* @__PURE__ */ import_react6.default.createElement(import_react6.default.Fragment, null, /* @__PURE__ */ import_react6.default.createElement(Header_default, null), isLoading ? /* @__PURE__ */ import_react6.default.createElement("p", null, "Loading...") : /* @__PURE__ */ import_react6.default.createElement("div", { className: "container mt-4" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "col-md-4" }, /* @__PURE__ */ import_react6.default.createElement(EventList_default, { events })), /* @__PURE__ */ import_react6.default.createElement("div", { className: "col-md-8" }, /* @__PURE__ */ import_react6.default.createElement(Routes, null, /* @__PURE__ */ import_react6.default.createElement(
+    return /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null, /* @__PURE__ */ import_react9.default.createElement(Header_default, { currUser, setCurrUser }), isLoading ? /* @__PURE__ */ import_react9.default.createElement("p", null, "Loading...") : /* @__PURE__ */ import_react9.default.createElement("div", { className: "container mt-4" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "col-md-4" }, /* @__PURE__ */ import_react9.default.createElement(EventList_default, { events })), /* @__PURE__ */ import_react9.default.createElement("div", { className: "col-md-8" }, /* @__PURE__ */ import_react9.default.createElement(Routes, null, /* @__PURE__ */ import_react9.default.createElement(
       Route,
       {
         path: "new",
-        element: /* @__PURE__ */ import_react6.default.createElement(EventForm_default, { onSave: addEvent })
+        element: /* @__PURE__ */ import_react9.default.createElement(EventForm_default, { onSave: addEvent })
       }
-    ), /* @__PURE__ */ import_react6.default.createElement(
+    ), /* @__PURE__ */ import_react9.default.createElement(
       Route,
       {
         path: ":id",
-        element: /* @__PURE__ */ import_react6.default.createElement(Event_default, { events, onDelete: deleteEvent })
+        element: /* @__PURE__ */ import_react9.default.createElement(Event_default, { events, onDelete: deleteEvent })
       }
-    ), /* @__PURE__ */ import_react6.default.createElement(
+    ), /* @__PURE__ */ import_react9.default.createElement(
       Route,
       {
         path: ":id/edit",
-        element: /* @__PURE__ */ import_react6.default.createElement(EventForm_default, { events, n: true, onSave: updateEvent })
+        element: /* @__PURE__ */ import_react9.default.createElement(EventForm_default, { events, n: true, onSave: updateEvent })
       }
     ))))));
   };
   var Editor_default = Editor;
 
+  // app/javascript/components/User.js
+  var User = ({ currUser, setCurrUser }) => {
+    const [show, setShow] = (0, import_react11.useState)(true);
+    if (currUser) {
+      return /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement(Routes, null, /* @__PURE__ */ import_react10.default.createElement(
+        Route,
+        {
+          path: "events/*",
+          element: /* @__PURE__ */ import_react10.default.createElement(
+            Editor_default,
+            {
+              currUser,
+              setCurrUser
+            }
+          )
+        }
+      )));
+    }
+    return /* @__PURE__ */ import_react10.default.createElement("div", null, show ? /* @__PURE__ */ import_react10.default.createElement(
+      Login_default,
+      {
+        setCurrUser,
+        setShow
+      }
+    ) : /* @__PURE__ */ import_react10.default.createElement(
+      Signup_default,
+      {
+        setCurrUser,
+        setShow
+      }
+    ));
+  };
+  var User_default = User;
+
   // app/javascript/components/App.js
-  var App = () => /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null, /* @__PURE__ */ import_react7.default.createElement(Routes, null, /* @__PURE__ */ import_react7.default.createElement(Route, { path: "events/*", element: /* @__PURE__ */ import_react7.default.createElement(Editor_default, null) })), /* @__PURE__ */ import_react7.default.createElement(k, null));
+  var App = () => {
+    const [currUser, setCurrUser] = (0, import_react12.useState)(null);
+    return /* @__PURE__ */ import_react12.default.createElement(import_react12.default.Fragment, null, /* @__PURE__ */ import_react12.default.createElement(User_default, { currUser, setCurrUser }), /* @__PURE__ */ import_react12.default.createElement(k, null));
+  };
   var App_default = App;
 
   // app/javascript/application.js
@@ -39662,7 +39824,7 @@
   var root = (0, import_client.createRoot)(container);
   document.addEventListener("DOMContentLoaded", () => {
     root.render(
-      /* @__PURE__ */ import_react8.default.createElement(import_react8.StrictMode, null, /* @__PURE__ */ import_react8.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react8.default.createElement(App_default, null)))
+      /* @__PURE__ */ import_react13.default.createElement(import_react13.StrictMode, null, /* @__PURE__ */ import_react13.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react13.default.createElement(App_default, null)))
     );
   });
 })();
